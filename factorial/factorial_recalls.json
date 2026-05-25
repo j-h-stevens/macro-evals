@@ -1,0 +1,116 @@
+{
+  "modes": [
+    "substitution_reroute",
+    "compliance_skipped_under_tariff",
+    "stale_quote_slow_pricing",
+    "pricing_drift",
+    "escalation_loop",
+    "random_noise_failure"
+  ],
+  "results": {
+    "000_baseline": {
+      "substitution_reroute": [
+        0.22167487684729065,
+        4
+      ],
+      "compliance_skipped_under_tariff": [
+        0.19433198380566802,
+        112
+      ],
+      "stale_quote_slow_pricing": [
+        0.05128205128205128,
+        104
+      ],
+      "pricing_drift": [
+        0.023630907726931733,
+        7
+      ],
+      "escalation_loop": [
+        0.2517482517482518,
+        86
+      ],
+      "random_noise_failure": [
+        0.1382636655948553,
+        108
+      ]
+    },
+    "100_latency_only": {
+      "substitution_reroute": [
+        0.20935960591133004,
+        123
+      ],
+      "compliance_skipped_under_tariff": [
+        0.17408906882591094,
+        77
+      ],
+      "stale_quote_slow_pricing": [
+        0.13333333333333333,
+        111
+      ],
+      "pricing_drift": [
+        0.025506376594148537,
+        5
+      ],
+      "escalation_loop": [
+        0.4195804195804196,
+        122
+      ],
+      "random_noise_failure": [
+        0.3247588424437299,
+        47
+      ]
+    },
+    "010_absence_only": {
+      "substitution_reroute": [
+        0.14285714285714285,
+        14
+      ],
+      "compliance_skipped_under_tariff": [
+        0.19433198380566802,
+        67
+      ],
+      "stale_quote_slow_pricing": [
+        0.05128205128205128,
+        71
+      ],
+      "pricing_drift": [
+        0.02250562640660165,
+        30
+      ],
+      "escalation_loop": [
+        0.34265734265734266,
+        118
+      ],
+      "random_noise_failure": [
+        0.2958199356913183,
+        62
+      ]
+    },
+    "110_improved": {
+      "substitution_reroute": [
+        0.3866995073891626,
+        116
+      ],
+      "compliance_skipped_under_tariff": [
+        0.1902834008097166,
+        73
+      ],
+      "stale_quote_slow_pricing": [
+        0.13333333333333333,
+        46
+      ],
+      "pricing_drift": [
+        0.04688672168042011,
+        116
+      ],
+      "escalation_loop": [
+        0.6993006993006993,
+        116
+      ],
+      "random_noise_failure": [
+        0.24115755627009647,
+        96
+      ]
+    }
+  }
+}

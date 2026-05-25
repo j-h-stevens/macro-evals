@@ -1,0 +1,46 @@
+{
+  "seed": 42,
+  "n_traces": 5000,
+  "n_clusters": 124,
+  "n_noise": 331,
+  "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "umap": {
+    "n_neighbors": 15,
+    "n_components": 5,
+    "min_dist": 0.0,
+    "metric": "cosine",
+    "random_state": 42
+  },
+  "hdbscan": {
+    "min_cluster_size": 20,
+    "min_samples": 5,
+    "metric": "euclidean"
+  },
+  "top_n_terms": 10,
+  "severity_weights": {
+    "hard_failure": 3.0,
+    "review": 2.0,
+    "completion_with_finding": 1.0,
+    "successful_completion": 0.0
+  },
+  "suspect_weights": {
+    "proximity": 0.4,
+    "frequency": 0.3,
+    "bridge": 0.2,
+    "role": 0.1
+  },
+  "walk_depth": 10,
+  "library_versions": {
+    "python": "3.13.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "sklearn": "1.8.0",
+    "umap_learn": "0.5.12",
+    "sentence_transformers": "5.5.1",
+    "hdbscan": "unknown"
+  },
+  "runtime_seconds": 28.126848936080933,
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "variant": "improved"
+}

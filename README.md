@@ -8,8 +8,10 @@ A pre-registered synthetic regression test of OpenAI's [*Macro Evals for Agentic
 
 - **The cookbook's pipeline catches the "easy" failures at 22–25% recall@cluster.** Structural failures the cookbook implies its pipeline handles well land far below the 50% sanity threshold our pre-registration named.
 - **The "improved" pipeline's escalation_loop gain is artifactual.** A constant-`lat:tick` ablation collapses the +45pp gain to baseline; the active ingredient is consistent with uniform-motif repetition, not with latency information being lifted into the geometry.
-- **The cookbook's backward suspect walk loses to a two-line heuristic** ("most frequent agent in last 5 events") on hub-and-spoke topologies. The four-component scoring formula is structurally biased toward hubs.
-- **Document construction is the load-bearing design decision in the cookbook's pipeline template.** Treated as preprocessing in the cookbook; in fact it decides what the embedder sees, what the clusterer can find, and what the suspect walker can attribute.
+- **A 20-dim hand-feature baseline ties or beats the cookbook's MiniLM+UMAP+HDBSCAN stack on 4 of 6 failure modes.** The cookbook's pipeline only earns its complexity on the two latency-driven modes its document construction happens to target.
+- **The cookbook's backward suspect walk loses to a two-line heuristic** ("most frequent agent in last 5 events") on hub-and-spoke topologies. Held-out validation makes this finding stronger, not weaker.
+- **E2's in-sample positive H1 effect does not replicate out-of-sample.** Held-out 20% reverses the gap from +8pp to −11pp. The latency-token mechanism that produced the in-sample win is not robust to refitting.
+- **Document construction is the load-bearing design decision in the cookbook's pipeline template.** There is a structural reason for this, not only an empirical one (see article §"What this means").
 
 ## How to reproduce (≤ 5 minutes wall time on a CPU laptop)
 
