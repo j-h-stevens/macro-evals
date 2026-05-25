@@ -1,0 +1,4 @@
+cluster_id,signal_name,alert_day,cumulative_deviation,threshold_crossed
+116,price_usd_mean,56,0.021427,0.004
+case:supplier_substitution,price_usd_mean,56,0.019367,0.004
+case:custom_configuration,price_usd_mean,49,0.01893,0.004

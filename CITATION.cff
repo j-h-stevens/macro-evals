@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "Macro Evals, Audited: A pre-registered synthetic regression test of OpenAI's Macro Evals for Agentic Systems cookbook"
+message: "If you use this work, please cite it as below."
+type: software
+authors:
+  - given-names: John
+    family-names: Stevens
+    email: johns@accellu.com
+date-released: 2026-06-30
+url: "https://github.com/j-h-stevens/macro-evals"
+license: MIT
+keywords:
+  - macro-evals
+  - agentic-systems
+  - evaluation
+  - clustering
+  - hdbscan
+  - pre-registration
+  - openai-cookbook
+abstract: |
+  An adversarially-reviewed audit of OpenAI's Macro Evals for Agentic Systems
+  cookbook. Five hypotheses pre-registered against synthetic agent traces;
+  most refuted by their own thresholds. The 60-named-expert review identified
+  document construction as the load-bearing design decision in the cookbook's
+  pipeline template, and the article makes a structural argument for why that
+  decision propagates downstream.

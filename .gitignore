@@ -1,0 +1,23 @@
+# Virtualenvs and Python bytecode
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor & OS cruft
+.DS_Store
+*.swp
+*~
+*.bak
+
+# Pipeline outputs (large, regenerable via `bash appendix/reproduce.sh`)
+baseline/outputs/clusters.jsonl
+improved/outputs/clusters.jsonl
+baseline_handfeature/outputs/clusters.jsonl
+
+# Synthetic dataset (8MB, regenerable via `python sim/generate_traces.py`)
+sim/data/traces.jsonl
+
+# Logs and scratch
+*.log
+scratch/

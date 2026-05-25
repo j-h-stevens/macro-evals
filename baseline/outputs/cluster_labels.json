@@ -1,0 +1,2767 @@
+{
+  "-1": {
+    "top_terms": [
+      "release_return:release_order=needs_review",
+      "orchestrator->compliance:recheck_regs",
+      "compliance_return:recheck_regs=review",
+      "release=needs_review",
+      "outcome:review",
+      "outcome_group:review",
+      "compliance=review",
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:supplier_substitution",
+      "case_type:regulated_export"
+    ],
+    "size": 218,
+    "prevalence": 0.0436,
+    "severity_distribution": {
+      "successful_completion": 115,
+      "review": 103
+    },
+    "mean_severity_weight": 0.944954128440367,
+    "severity_weighted_prevalence": 0.0412,
+    "impact_score": 0.0017963200000000001,
+    "high_impact": false
+  },
+  "0": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 49,
+    "prevalence": 0.0098,
+    "severity_distribution": {
+      "successful_completion": 49
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "1": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 57,
+    "prevalence": 0.0114,
+    "severity_distribution": {
+      "successful_completion": 57
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "2": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 45,
+    "prevalence": 0.009,
+    "severity_distribution": {
+      "successful_completion": 45
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "3": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 32,
+    "prevalence": 0.0064,
+    "severity_distribution": {
+      "successful_completion": 32
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "4": {
+    "top_terms": [
+      "factory_return:reroute_build=rerouted",
+      "orchestrator->factory",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "factory=rerouted",
+      "case_type:supplier_substitution",
+      "release_return:release_order=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready",
+      "release=release_ok"
+    ],
+    "size": 90,
+    "prevalence": 0.018,
+    "severity_distribution": {
+      "successful_completion": 90
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "5": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock",
+      "outcome:completed"
+    ],
+    "size": 40,
+    "prevalence": 0.008,
+    "severity_distribution": {
+      "successful_completion": 40
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "6": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 67,
+    "prevalence": 0.0134,
+    "severity_distribution": {
+      "successful_completion": 67
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "7": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 63,
+    "prevalence": 0.0126,
+    "severity_distribution": {
+      "successful_completion": 63
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "8": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 60,
+    "prevalence": 0.012,
+    "severity_distribution": {
+      "successful_completion": 60
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "9": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 46,
+    "prevalence": 0.0092,
+    "severity_distribution": {
+      "successful_completion": 46
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "10": {
+    "top_terms": [
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:standard_build",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "compliance_return:check_regs=review",
+      "compliance=review",
+      "compliance=pass"
+    ],
+    "size": 44,
+    "prevalence": 0.0088,
+    "severity_distribution": {
+      "review": 44
+    },
+    "mean_severity_weight": 2.0,
+    "severity_weighted_prevalence": 0.0176,
+    "impact_score": 0.00015488,
+    "high_impact": true
+  },
+  "11": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock",
+      "outcome:completed"
+    ],
+    "size": 54,
+    "prevalence": 0.0108,
+    "severity_distribution": {
+      "successful_completion": 54
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "12": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 43,
+    "prevalence": 0.0086,
+    "severity_distribution": {
+      "successful_completion": 43
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "13": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 59,
+    "prevalence": 0.0118,
+    "severity_distribution": {
+      "successful_completion": 59
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "14": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 42,
+    "prevalence": 0.0084,
+    "severity_distribution": {
+      "successful_completion": 42
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "15": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 39,
+    "prevalence": 0.0078,
+    "severity_distribution": {
+      "successful_completion": 39
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "16": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 35,
+    "prevalence": 0.007,
+    "severity_distribution": {
+      "successful_completion": 35
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "17": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 52,
+    "prevalence": 0.0104,
+    "severity_distribution": {
+      "successful_completion": 52
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "18": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 45,
+    "prevalence": 0.009,
+    "severity_distribution": {
+      "successful_completion": 45
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "19": {
+    "top_terms": [
+      "scheduling_tool:slot_retry",
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock"
+    ],
+    "size": 29,
+    "prevalence": 0.0058,
+    "severity_distribution": {
+      "successful_completion": 29
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "20": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 46,
+    "prevalence": 0.0092,
+    "severity_distribution": {
+      "successful_completion": 46
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "21": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 42,
+    "prevalence": 0.0084,
+    "severity_distribution": {
+      "successful_completion": 42
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "22": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 62,
+    "prevalence": 0.0124,
+    "severity_distribution": {
+      "successful_completion": 62
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "23": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 55,
+    "prevalence": 0.011,
+    "severity_distribution": {
+      "successful_completion": 55
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "24": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 51,
+    "prevalence": 0.0102,
+    "severity_distribution": {
+      "successful_completion": 51
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "25": {
+    "top_terms": [
+      "env:low_stock_warn",
+      "case_type:custom_configuration",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 40,
+    "prevalence": 0.008,
+    "severity_distribution": {
+      "successful_completion": 37,
+      "review": 3
+    },
+    "mean_severity_weight": 0.15,
+    "severity_weighted_prevalence": 0.0012,
+    "impact_score": 9.6e-06,
+    "high_impact": true
+  },
+  "26": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 54,
+    "prevalence": 0.0108,
+    "severity_distribution": {
+      "successful_completion": 54
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "27": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 63,
+    "prevalence": 0.0126,
+    "severity_distribution": {
+      "successful_completion": 63
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "28": {
+    "top_terms": [
+      "case_type:expedited_delivery",
+      "env:expedite_flag",
+      "env:expedite_flag,tariff_us_eu",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "compliance=pass"
+    ],
+    "size": 58,
+    "prevalence": 0.0116,
+    "severity_distribution": {
+      "successful_completion": 58
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "29": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 42,
+    "prevalence": 0.0084,
+    "severity_distribution": {
+      "successful_completion": 42
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "30": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 50,
+    "prevalence": 0.01,
+    "severity_distribution": {
+      "successful_completion": 50
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "31": {
+    "top_terms": [
+      "env:tariff_us_eu",
+      "case_type:standard_build",
+      "env:low_stock_warn,tariff_us_eu",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 37,
+    "prevalence": 0.0074,
+    "severity_distribution": {
+      "successful_completion": 37
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "32": {
+    "top_terms": [
+      "scheduling_tool:slot_retry",
+      "case_type:standard_build",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock"
+    ],
+    "size": 30,
+    "prevalence": 0.006,
+    "severity_distribution": {
+      "successful_completion": 30
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "33": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 39,
+    "prevalence": 0.0078,
+    "severity_distribution": {
+      "successful_completion": 39
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "34": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 51,
+    "prevalence": 0.0102,
+    "severity_distribution": {
+      "successful_completion": 51
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "35": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 55,
+    "prevalence": 0.011,
+    "severity_distribution": {
+      "successful_completion": 55
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "36": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 33,
+    "prevalence": 0.0066,
+    "severity_distribution": {
+      "successful_completion": 33
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "37": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 55,
+    "prevalence": 0.011,
+    "severity_distribution": {
+      "successful_completion": 55
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "38": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 25,
+    "prevalence": 0.005,
+    "severity_distribution": {
+      "successful_completion": 25
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "39": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 34,
+    "prevalence": 0.0068,
+    "severity_distribution": {
+      "successful_completion": 34
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "40": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 49,
+    "prevalence": 0.0098,
+    "severity_distribution": {
+      "successful_completion": 49
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "41": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 56,
+    "prevalence": 0.0112,
+    "severity_distribution": {
+      "successful_completion": 56
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "42": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 33,
+    "prevalence": 0.0066,
+    "severity_distribution": {
+      "successful_completion": 33
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "43": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 51,
+    "prevalence": 0.0102,
+    "severity_distribution": {
+      "successful_completion": 51
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "44": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 53,
+    "prevalence": 0.0106,
+    "severity_distribution": {
+      "successful_completion": 53
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "45": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 39,
+    "prevalence": 0.0078,
+    "severity_distribution": {
+      "successful_completion": 39
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "46": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 48,
+    "prevalence": 0.0096,
+    "severity_distribution": {
+      "successful_completion": 48
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "47": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 44,
+    "prevalence": 0.0088,
+    "severity_distribution": {
+      "successful_completion": 44
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "48": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 37,
+    "prevalence": 0.0074,
+    "severity_distribution": {
+      "successful_completion": 37
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "49": {
+    "top_terms": [
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 26,
+    "prevalence": 0.0052,
+    "severity_distribution": {
+      "successful_completion": 26
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "50": {
+    "top_terms": [
+      "env:tariff_us_eu",
+      "case_type:custom_configuration",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "env:low_stock_warn,tariff_us_eu",
+      "release_return:release_order=release_ok",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready"
+    ],
+    "size": 34,
+    "prevalence": 0.0068,
+    "severity_distribution": {
+      "successful_completion": 34
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "51": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 34,
+    "prevalence": 0.0068,
+    "severity_distribution": {
+      "successful_completion": 34
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "52": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 23,
+    "prevalence": 0.0046,
+    "severity_distribution": {
+      "successful_completion": 23
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "53": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 30,
+    "prevalence": 0.006,
+    "severity_distribution": {
+      "successful_completion": 30
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "54": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 41,
+    "prevalence": 0.0082,
+    "severity_distribution": {
+      "successful_completion": 41
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "55": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 46,
+    "prevalence": 0.0092,
+    "severity_distribution": {
+      "successful_completion": 46
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "56": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 42,
+    "prevalence": 0.0084,
+    "severity_distribution": {
+      "successful_completion": 42
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "57": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 27,
+    "prevalence": 0.0054,
+    "severity_distribution": {
+      "successful_completion": 27
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "58": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "scheduling_tool:slot_retry",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply=in_stock"
+    ],
+    "size": 20,
+    "prevalence": 0.004,
+    "severity_distribution": {
+      "successful_completion": 20
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "59": {
+    "top_terms": [
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock"
+    ],
+    "size": 36,
+    "prevalence": 0.0072,
+    "severity_distribution": {
+      "review": 36
+    },
+    "mean_severity_weight": 2.0,
+    "severity_weighted_prevalence": 0.0144,
+    "impact_score": 0.00010368,
+    "high_impact": true
+  },
+  "60": {
+    "top_terms": [
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:standard_build",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "release=release_ok",
+      "compliance_return:check_regs=review",
+      "compliance=review",
+      "compliance_return:check_regs=pass"
+    ],
+    "size": 38,
+    "prevalence": 0.0076,
+    "severity_distribution": {
+      "review": 38
+    },
+    "mean_severity_weight": 2.0,
+    "severity_weighted_prevalence": 0.0152,
+    "impact_score": 0.00011552,
+    "high_impact": true
+  },
+  "61": {
+    "top_terms": [
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 66,
+    "prevalence": 0.0132,
+    "severity_distribution": {
+      "successful_completion": 66
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "62": {
+    "top_terms": [
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:standard_build",
+      "env:import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "release=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 35,
+    "prevalence": 0.007,
+    "severity_distribution": {
+      "successful_completion": 35
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "63": {
+    "top_terms": [
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 30,
+    "prevalence": 0.006,
+    "severity_distribution": {
+      "successful_completion": 30
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "64": {
+    "top_terms": [
+      "scheduling_tool:slot_retry",
+      "case_type:standard_build",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock"
+    ],
+    "size": 29,
+    "prevalence": 0.0058,
+    "severity_distribution": {
+      "successful_completion": 29
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "65": {
+    "top_terms": [
+      "env:import_heavy_sku",
+      "case_type:standard_build",
+      "pricing=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=released",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared"
+    ],
+    "size": 36,
+    "prevalence": 0.0072,
+    "severity_distribution": {
+      "successful_completion": 33,
+      "review": 3
+    },
+    "mean_severity_weight": 0.16666666666666666,
+    "severity_weighted_prevalence": 0.0012,
+    "impact_score": 8.639999999999999e-06,
+    "high_impact": true
+  },
+  "66": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 43,
+    "prevalence": 0.0086,
+    "severity_distribution": {
+      "successful_completion": 43
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "67": {
+    "top_terms": [
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 24,
+    "prevalence": 0.0048,
+    "severity_distribution": {
+      "successful_completion": 24
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "68": {
+    "top_terms": [
+      "env:expedite_flag,import_heavy_sku,tariff_us_eu",
+      "case_type:expedited_delivery",
+      "env:expedite_flag,import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing=quote_prepared",
+      "release=released",
+      "release_return:release_order=released"
+    ],
+    "size": 29,
+    "prevalence": 0.0058,
+    "severity_distribution": {
+      "successful_completion": 29
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "69": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 35,
+    "prevalence": 0.007,
+    "severity_distribution": {
+      "successful_completion": 35
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "70": {
+    "top_terms": [
+      "env:expedite_flag,import_heavy_sku,tariff_us_eu",
+      "case_type:expedited_delivery",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 39,
+    "prevalence": 0.0078,
+    "severity_distribution": {
+      "successful_completion": 36,
+      "hard_failure": 3
+    },
+    "mean_severity_weight": 0.23076923076923078,
+    "severity_weighted_prevalence": 0.0018,
+    "impact_score": 1.404e-05,
+    "high_impact": true
+  },
+  "71": {
+    "top_terms": [
+      "env:expedite_flag,import_heavy_sku",
+      "case_type:expedited_delivery",
+      "compliance_return:check_regs=review",
+      "compliance=review",
+      "compliance_signal:spurious_warning",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready",
+      "scheduling_tool:slot_retry"
+    ],
+    "size": 24,
+    "prevalence": 0.0048,
+    "severity_distribution": {
+      "successful_completion": 22,
+      "review": 2
+    },
+    "mean_severity_weight": 0.16666666666666666,
+    "severity_weighted_prevalence": 0.0007999999999999999,
+    "impact_score": 3.84e-06,
+    "high_impact": true
+  },
+  "72": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 37,
+    "prevalence": 0.0074,
+    "severity_distribution": {
+      "successful_completion": 37
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "73": {
+    "top_terms": [
+      "env:expedite_flag",
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:expedited_delivery",
+      "compliance_return:check_regs=review",
+      "compliance=review",
+      "env:expedite_flag,low_stock_warn",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 57,
+    "prevalence": 0.0114,
+    "severity_distribution": {
+      "review": 52,
+      "successful_completion": 5
+    },
+    "mean_severity_weight": 1.8245614035087718,
+    "severity_weighted_prevalence": 0.0208,
+    "impact_score": 0.00023712,
+    "high_impact": true
+  },
+  "74": {
+    "top_terms": [
+      "case_type:expedited_delivery",
+      "env:expedite_flag,low_stock_warn",
+      "env:expedite_flag",
+      "scheduling_tool:slot_retry",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 52,
+    "prevalence": 0.0104,
+    "severity_distribution": {
+      "successful_completion": 52
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "75": {
+    "top_terms": [
+      "env:expedite_flag,tariff_us_eu",
+      "case_type:expedited_delivery",
+      "env:expedite_flag,low_stock_warn,tariff_us_eu",
+      "release_return:release_order=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 35,
+    "prevalence": 0.007,
+    "severity_distribution": {
+      "successful_completion": 34,
+      "review": 1
+    },
+    "mean_severity_weight": 0.05714285714285714,
+    "severity_weighted_prevalence": 0.0004,
+    "impact_score": 2.8000000000000003e-06,
+    "high_impact": true
+  },
+  "76": {
+    "top_terms": [
+      "env:low_stock_warn",
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 41,
+    "prevalence": 0.0082,
+    "severity_distribution": {
+      "successful_completion": 41
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "77": {
+    "top_terms": [
+      "env:expedite_flag,low_stock_warn",
+      "case_type:expedited_delivery",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 32,
+    "prevalence": 0.0064,
+    "severity_distribution": {
+      "successful_completion": 32
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "78": {
+    "top_terms": [
+      "env:expedite_flag",
+      "case_type:expedited_delivery",
+      "scheduling_signal:telemetry_drop",
+      "outcome_group:hard_failure",
+      "outcome:failed",
+      "supply_signal:telemetry_drop",
+      "release=released",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 39,
+    "prevalence": 0.0078,
+    "severity_distribution": {
+      "successful_completion": 32,
+      "hard_failure": 6,
+      "review": 1
+    },
+    "mean_severity_weight": 0.5128205128205128,
+    "severity_weighted_prevalence": 0.003999999999999999,
+    "impact_score": 3.119999999999999e-05,
+    "high_impact": true
+  },
+  "79": {
+    "top_terms": [
+      "orchestrator->factory",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "factory_return:reroute_build=rerouted",
+      "factory=rerouted",
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:supplier_substitution",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released"
+    ],
+    "size": 23,
+    "prevalence": 0.0046,
+    "severity_distribution": {
+      "successful_completion": 23
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "80": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock",
+      "outcome:completed"
+    ],
+    "size": 37,
+    "prevalence": 0.0074,
+    "severity_distribution": {
+      "successful_completion": 37
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "81": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 36,
+    "prevalence": 0.0072,
+    "severity_distribution": {
+      "successful_completion": 36
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "82": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "scheduling_tool:slot_retry",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready"
+    ],
+    "size": 53,
+    "prevalence": 0.0106,
+    "severity_distribution": {
+      "successful_completion": 49,
+      "hard_failure": 4
+    },
+    "mean_severity_weight": 0.22641509433962265,
+    "severity_weighted_prevalence": 0.0024000000000000002,
+    "impact_score": 2.5440000000000004e-05,
+    "high_impact": true
+  },
+  "83": {
+    "top_terms": [
+      "factory_return:reroute_build=rerouted",
+      "orchestrator->factory",
+      "factory=rerouted",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "case_type:supplier_substitution",
+      "env:import_heavy_sku,tariff_us_eu",
+      "env:import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "compliance=review",
+      "compliance_return:check_regs=review"
+    ],
+    "size": 63,
+    "prevalence": 0.0126,
+    "severity_distribution": {
+      "successful_completion": 62,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 0.047619047619047616,
+    "severity_weighted_prevalence": 0.0006,
+    "impact_score": 7.56e-06,
+    "high_impact": true
+  },
+  "84": {
+    "top_terms": [
+      "orchestrator->factory",
+      "factory_return:reroute_build=rerouted",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "factory=rerouted",
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:supplier_substitution",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 33,
+    "prevalence": 0.0066,
+    "severity_distribution": {
+      "successful_completion": 33
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "85": {
+    "top_terms": [
+      "env:low_stock_warn",
+      "case_type:standard_build",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 37,
+    "prevalence": 0.0074,
+    "severity_distribution": {
+      "successful_completion": 37
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "86": {
+    "top_terms": [
+      "release=needs_review",
+      "release_return:release_order=needs_review",
+      "orchestrator->compliance:recheck_regs",
+      "compliance_return:recheck_regs=review",
+      "compliance=review",
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:custom_configuration",
+      "case_type:standard_build",
+      "compliance_return:check_regs=review"
+    ],
+    "size": 36,
+    "prevalence": 0.0072,
+    "severity_distribution": {
+      "review": 36
+    },
+    "mean_severity_weight": 2.0,
+    "severity_weighted_prevalence": 0.0144,
+    "impact_score": 0.00010368,
+    "high_impact": true
+  },
+  "87": {
+    "top_terms": [
+      "env:low_stock_warn",
+      "case_type:standard_build",
+      "outcome_group:review",
+      "outcome:review",
+      "scheduling_tool:slot_retry",
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release=released"
+    ],
+    "size": 22,
+    "prevalence": 0.0044,
+    "severity_distribution": {
+      "successful_completion": 13,
+      "review": 9
+    },
+    "mean_severity_weight": 0.8181818181818182,
+    "severity_weighted_prevalence": 0.0036000000000000003,
+    "impact_score": 1.584e-05,
+    "high_impact": true
+  },
+  "88": {
+    "top_terms": [
+      "env:low_stock_warn",
+      "case_type:standard_build",
+      "release_return:release_order=released",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "outcome:failed",
+      "outcome_group:hard_failure",
+      "pricing_signal:telemetry_drop",
+      "release_signal:spurious_warning"
+    ],
+    "size": 45,
+    "prevalence": 0.009,
+    "severity_distribution": {
+      "successful_completion": 42,
+      "hard_failure": 3
+    },
+    "mean_severity_weight": 0.2,
+    "severity_weighted_prevalence": 0.0018,
+    "impact_score": 1.6199999999999997e-05,
+    "high_impact": true
+  },
+  "89": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "env:import_heavy_sku,tariff_us_eu",
+      "env:import_heavy_sku",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "pricing=quote_prepared",
+      "env:import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready"
+    ],
+    "size": 53,
+    "prevalence": 0.0106,
+    "severity_distribution": {
+      "successful_completion": 51,
+      "review": 1,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 0.09433962264150944,
+    "severity_weighted_prevalence": 0.001,
+    "impact_score": 1.06e-05,
+    "high_impact": true
+  },
+  "90": {
+    "top_terms": [
+      "release=needs_review",
+      "release_return:release_order=needs_review",
+      "compliance_return:recheck_regs=review",
+      "orchestrator->compliance:recheck_regs",
+      "compliance=review",
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:regulated_export",
+      "case_type:standard_build",
+      "env:import_heavy_sku,tariff_us_eu"
+    ],
+    "size": 30,
+    "prevalence": 0.006,
+    "severity_distribution": {
+      "review": 30
+    },
+    "mean_severity_weight": 2.0,
+    "severity_weighted_prevalence": 0.012,
+    "impact_score": 7.2e-05,
+    "high_impact": true
+  },
+  "91": {
+    "top_terms": [
+      "release=needs_review",
+      "orchestrator->compliance:recheck_regs",
+      "release_return:release_order=needs_review",
+      "compliance_return:recheck_regs=review",
+      "compliance=review",
+      "outcome:review",
+      "outcome_group:review",
+      "case_type:expedited_delivery",
+      "env:expedite_flag",
+      "case_type:standard_build"
+    ],
+    "size": 24,
+    "prevalence": 0.0048,
+    "severity_distribution": {
+      "review": 24
+    },
+    "mean_severity_weight": 2.0,
+    "severity_weighted_prevalence": 0.0096,
+    "impact_score": 4.607999999999999e-05,
+    "high_impact": true
+  },
+  "92": {
+    "top_terms": [
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "case_type:standard_build",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "scheduling_tool:slot_retry",
+      "supply=in_stock",
+      "supply_return:check_stock=in_stock"
+    ],
+    "size": 33,
+    "prevalence": 0.0066,
+    "severity_distribution": {
+      "successful_completion": 33
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "93": {
+    "top_terms": [
+      "env:low_stock_warn",
+      "case_type:regulated_export",
+      "release_return:release_order=release_ok",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared"
+    ],
+    "size": 39,
+    "prevalence": 0.0078,
+    "severity_distribution": {
+      "successful_completion": 39
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "94": {
+    "top_terms": [
+      "case_type:supplier_substitution",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome_group:successful_completion"
+    ],
+    "size": 50,
+    "prevalence": 0.01,
+    "severity_distribution": {
+      "successful_completion": 50
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "95": {
+    "top_terms": [
+      "orchestrator->factory",
+      "factory_return:reroute_build=rerouted",
+      "factory=rerouted",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:supplier_substitution",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 22,
+    "prevalence": 0.0044,
+    "severity_distribution": {
+      "successful_completion": 22
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "96": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "release_return:release_order=released",
+      "release=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "outcome_group:review",
+      "outcome:review",
+      "scheduling_tool:slot_retry"
+    ],
+    "size": 30,
+    "prevalence": 0.006,
+    "severity_distribution": {
+      "successful_completion": 26,
+      "review": 4
+    },
+    "mean_severity_weight": 0.26666666666666666,
+    "severity_weighted_prevalence": 0.0016,
+    "impact_score": 9.600000000000001e-06,
+    "high_impact": true
+  },
+  "97": {
+    "top_terms": [
+      "case_type:regulated_export",
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "release_return:release_order=release_ok",
+      "release_signal:metric_blip_unrelated",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 24,
+    "prevalence": 0.0048,
+    "severity_distribution": {
+      "successful_completion": 24
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "98": {
+    "top_terms": [
+      "case_type:supplier_substitution",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 41,
+    "prevalence": 0.0082,
+    "severity_distribution": {
+      "successful_completion": 41
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "99": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "scheduling_tool:slot_retry",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release=released",
+      "release_return:release_order=released"
+    ],
+    "size": 32,
+    "prevalence": 0.0064,
+    "severity_distribution": {
+      "successful_completion": 32
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "100": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "outcome:failed",
+      "outcome_group:hard_failure",
+      "release_signal:telemetry_drop",
+      "orchestrator_signal:metric_blip_unrelated",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "pricing=quote_ready"
+    ],
+    "size": 33,
+    "prevalence": 0.0066,
+    "severity_distribution": {
+      "successful_completion": 26,
+      "hard_failure": 7
+    },
+    "mean_severity_weight": 0.6363636363636364,
+    "severity_weighted_prevalence": 0.0042,
+    "impact_score": 2.772e-05,
+    "high_impact": true
+  },
+  "101": {
+    "top_terms": [
+      "case_type:supplier_substitution",
+      "outcome_group:review",
+      "outcome:review",
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "env:low_stock_warn",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing=quote_prepared"
+    ],
+    "size": 41,
+    "prevalence": 0.0082,
+    "severity_distribution": {
+      "successful_completion": 22,
+      "review": 19
+    },
+    "mean_severity_weight": 0.926829268292683,
+    "severity_weighted_prevalence": 0.007600000000000001,
+    "impact_score": 6.232000000000001e-05,
+    "high_impact": true
+  },
+  "102": {
+    "top_terms": [
+      "case_type:supplier_substitution",
+      "release=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock",
+      "outcome:completed"
+    ],
+    "size": 26,
+    "prevalence": 0.0052,
+    "severity_distribution": {
+      "successful_completion": 26
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "103": {
+    "top_terms": [
+      "case_type:supplier_substitution",
+      "scheduling_tool:slot_retry",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "compliance_return:check_regs=pass",
+      "compliance=pass",
+      "release_signal:metric_blip_unrelated",
+      "orchestrator_signal:metric_blip_unrelated"
+    ],
+    "size": 36,
+    "prevalence": 0.0072,
+    "severity_distribution": {
+      "successful_completion": 35,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 0.08333333333333333,
+    "severity_weighted_prevalence": 0.0006,
+    "impact_score": 4.319999999999999e-06,
+    "high_impact": true
+  },
+  "104": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "outcome:review",
+      "outcome_group:review",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "pricing=quote_ready",
+      "compliance_return:check_regs=review",
+      "compliance=review",
+      "release_return:release_order=released"
+    ],
+    "size": 47,
+    "prevalence": 0.0094,
+    "severity_distribution": {
+      "review": 43,
+      "successful_completion": 3,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 1.8936170212765957,
+    "severity_weighted_prevalence": 0.0178,
+    "impact_score": 0.00016732000000000002,
+    "high_impact": true
+  },
+  "105": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "compliance_return:check_regs=review",
+      "compliance=review",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 34,
+    "prevalence": 0.0068,
+    "severity_distribution": {
+      "successful_completion": 34
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "106": {
+    "top_terms": [
+      "case_type:standard_build",
+      "release_signal:unexpected_log_emit",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "release_return:release_order=released",
+      "compliance_signal:unexpected_log_emit",
+      "release_signal:spurious_warning",
+      "supply_signal:unexpected_log_emit",
+      "pricing_signal:metric_blip_unrelated"
+    ],
+    "size": 20,
+    "prevalence": 0.004,
+    "severity_distribution": {
+      "successful_completion": 20
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "107": {
+    "top_terms": [
+      "case_type:standard_build",
+      "outcome_group:review",
+      "outcome:review",
+      "scheduling_tool:slot_retry",
+      "supply_signal:spurious_warning",
+      "compliance=review",
+      "compliance_return:check_regs=review",
+      "pricing=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 38,
+    "prevalence": 0.0076,
+    "severity_distribution": {
+      "successful_completion": 22,
+      "review": 16
+    },
+    "mean_severity_weight": 0.8421052631578947,
+    "severity_weighted_prevalence": 0.0063999999999999994,
+    "impact_score": 4.8639999999999995e-05,
+    "high_impact": true
+  },
+  "108": {
+    "top_terms": [
+      "case_type:standard_build",
+      "outcome:failed",
+      "outcome_group:hard_failure",
+      "supply_signal:telemetry_drop",
+      "factory_signal:telemetry_drop",
+      "compliance_signal:unexpected_log_emit",
+      "pricing_signal:unexpected_log_emit",
+      "compliance_signal:telemetry_drop",
+      "orchestrator_signal:telemetry_drop",
+      "release_return:release_order=release_ok"
+    ],
+    "size": 43,
+    "prevalence": 0.0086,
+    "severity_distribution": {
+      "successful_completion": 31,
+      "hard_failure": 12
+    },
+    "mean_severity_weight": 0.8372093023255814,
+    "severity_weighted_prevalence": 0.007200000000000001,
+    "impact_score": 6.192e-05,
+    "high_impact": true
+  },
+  "109": {
+    "top_terms": [
+      "env:import_heavy_sku",
+      "supply_return:check_stock=substitute",
+      "factory=rerouted",
+      "factory_return:reroute_build=rerouted",
+      "supply=substitute",
+      "orchestrator->factory",
+      "case_type:supplier_substitution",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "pricing=quote_ready"
+    ],
+    "size": 33,
+    "prevalence": 0.0066,
+    "severity_distribution": {
+      "successful_completion": 33
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "110": {
+    "top_terms": [
+      "env:tariff_us_eu",
+      "case_type:regulated_export",
+      "env:import_heavy_sku",
+      "case_type:custom_configuration",
+      "env:low_stock_warn,tariff_us_eu",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared",
+      "release=released",
+      "pricing=quote_ready"
+    ],
+    "size": 55,
+    "prevalence": 0.011,
+    "severity_distribution": {
+      "successful_completion": 49,
+      "review": 5,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 0.23636363636363636,
+    "severity_weighted_prevalence": 0.0026,
+    "impact_score": 2.8599999999999997e-05,
+    "high_impact": true
+  },
+  "111": {
+    "top_terms": [
+      "factory_return:reroute_build=rerouted",
+      "orchestrator->factory",
+      "factory=rerouted",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "env:import_heavy_sku",
+      "case_type:supplier_substitution",
+      "env:import_heavy_sku,low_stock_warn",
+      "pricing=quote_prepared",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 37,
+    "prevalence": 0.0074,
+    "severity_distribution": {
+      "successful_completion": 36,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 0.08108108108108109,
+    "severity_weighted_prevalence": 0.0006000000000000001,
+    "impact_score": 4.440000000000001e-06,
+    "high_impact": true
+  },
+  "112": {
+    "top_terms": [
+      "factory_return:reroute_build=rerouted",
+      "factory=rerouted",
+      "orchestrator->factory",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "case_type:supplier_substitution",
+      "env:import_heavy_sku,tariff_us_eu",
+      "env:import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready"
+    ],
+    "size": 48,
+    "prevalence": 0.0096,
+    "severity_distribution": {
+      "successful_completion": 48
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "113": {
+    "top_terms": [
+      "factory_return:reroute_build=rerouted",
+      "orchestrator->factory",
+      "supply_return:check_stock=substitute",
+      "supply=substitute",
+      "factory=rerouted",
+      "env:import_heavy_sku,tariff_us_eu",
+      "case_type:supplier_substitution",
+      "pricing=quote_prepared",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared"
+    ],
+    "size": 28,
+    "prevalence": 0.0056,
+    "severity_distribution": {
+      "successful_completion": 28
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "114": {
+    "top_terms": [
+      "env:tariff_us_eu",
+      "case_type:standard_build",
+      "env:low_stock_warn,tariff_us_eu",
+      "release=release_ok",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release_return:release_order=release_ok",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock"
+    ],
+    "size": 21,
+    "prevalence": 0.0042,
+    "severity_distribution": {
+      "successful_completion": 21
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "115": {
+    "top_terms": [
+      "env:tariff_us_eu",
+      "case_type:standard_build",
+      "release=released",
+      "pricing_return:request_quote=quote_prepared",
+      "release_return:release_order=released",
+      "pricing=quote_prepared",
+      "compliance=pass",
+      "compliance_return:check_regs=pass",
+      "supply_return:check_stock=in_stock",
+      "supply=in_stock"
+    ],
+    "size": 21,
+    "prevalence": 0.0042,
+    "severity_distribution": {
+      "successful_completion": 21
+    },
+    "mean_severity_weight": 0.0,
+    "severity_weighted_prevalence": 0.0,
+    "impact_score": 0.0,
+    "high_impact": true
+  },
+  "116": {
+    "top_terms": [
+      "case_type:custom_configuration",
+      "env:import_heavy_sku,tariff_us_eu",
+      "env:import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "release=released",
+      "release_return:release_order=released",
+      "pricing_return:request_quote=quote_prepared",
+      "pricing=quote_prepared",
+      "release_return:release_order=release_ok",
+      "pricing_return:request_quote=quote_ready",
+      "pricing=quote_ready"
+    ],
+    "size": 23,
+    "prevalence": 0.0046,
+    "severity_distribution": {
+      "successful_completion": 21,
+      "review": 2
+    },
+    "mean_severity_weight": 0.17391304347826086,
+    "severity_weighted_prevalence": 0.0007999999999999999,
+    "impact_score": 3.6799999999999995e-06,
+    "high_impact": true
+  },
+  "117": {
+    "top_terms": [
+      "env:tariff_us_eu",
+      "case_type:standard_build",
+      "env:import_heavy_sku,low_stock_warn,tariff_us_eu",
+      "env:import_heavy_sku,tariff_us_eu",
+      "scheduling_tool:slot_retry",
+      "pricing=quote_ready",
+      "pricing_return:request_quote=quote_ready",
+      "release=release_ok",
+      "release_return:release_order=release_ok",
+      "supply_signal:unexpected_log_emit"
+    ],
+    "size": 32,
+    "prevalence": 0.0064,
+    "severity_distribution": {
+      "successful_completion": 31,
+      "hard_failure": 1
+    },
+    "mean_severity_weight": 0.09375,
+    "severity_weighted_prevalence": 0.0006000000000000001,
+    "impact_score": 3.8400000000000005e-06,
+    "high_impact": true
+  }
+}

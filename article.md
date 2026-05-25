@@ -1,0 +1,122 @@
+# Macro Evals, Audited
+
+Trace `t00011` runs for 22 events. The orchestrator hands off to compliance, which raises a policy flag on a regulated-export configuration. Release reviews the flag, kicks it back to compliance with a "needs clarification" note, and compliance re-checks the same constraint against the same env signals. Four iterations of that loop later (release flags, compliance reconsiders, release flags again), the orchestrator gives up and the run terminates as `escalation_loop`. The cookbook's pipeline, run faithfully on 5,000 traces, puts this trace in cluster 116 alongside 125 unrelated `pricing_drift` traces and 157 `substitution_reroute` traces that share nothing with `t00011` except length. That is the article.
+
+## What the cookbook gets right
+
+The cookbook frames population analysis as a four-label progression: label inputs (`case_type`), outcomes (`run_outcome`), local signals (`eval_finding`), then *discover* the emergent fourth label (`behavior_pattern`) by clustering (claims 1.1.1–1.1.4). The progression forces a team to be explicit about which labels are known a priori and which are discovered, a distinction most teams blur. The two-layer split, rubric-grading underneath and clustering-based discovery on top, is the right shape. The impact-times-lift triage metric ranks what to fix first by combining severity with concentration. The cookbook names its caveats: the suspect walk "is not proof of causality" (claim 8.6.1); impact is "a practical prioritization score" (claim 6.8.2), not a universal one.
+
+What we are auditing is the machinery underneath the frame, the specific embed-cluster-walk pipeline the cookbook presents as a worked example. The frame survives this audit. The machinery does not.
+
+## What we did
+
+We pre-registered three hypotheses against three blind spots in the cookbook (H1 temporal, H2 omission, H3 drift) and one hypothesis against the cookbook's diagnosis component (H4: the AgentTrace-style backward suspect walk). We built a 5,000-trace synthetic EV workflow with six injected failure modes at known prevalence and ground-truth labels (`sim/SCHEMA.md`). We implemented the cookbook's pipeline faithfully (MiniLM → UMAP → HDBSCAN → c-TF-IDF → impact×lift → backward walk) and an "improved" pipeline that adds three surgical mechanisms in a 141-line diff: latency-bucket tokens, expected-but-absent tokens, and an orthogonal CUSUM drift detector. Verdicts were frozen against thresholds we wrote before running anything.
+
+## Caveats the reader needs before the results
+
+Every number below is from one seed (42) on one synthetic dataset that *we generated*. Both facts are load-bearing limitations and the reader should hold them throughout. The bootstrap CIs we report quantify sampling variability across the 5,000 traces at a fixed seed; they hold cluster assignment fixed, and they therefore *understate* the run-to-run variability of HDBSCAN cluster identity, which is the larger noise source for any recall@cluster metric. We pre-registered seeds {42, 137} and have only run seed 42. We will re-run E2 and E5 across seeds {7, 42, 137, 2024, 31337} by 2026-07-01 and post deltas. Until then, every point estimate is "from one seed" and every CI is a lower bound on its real variability.
+
+The workload is also curated. We injected the six failure modes we then claim the cookbook misses. A reader is entitled to ask whether the pipeline would have looked better on a different curated workload, or on real production traces. We cannot answer that here. What we can claim is conditional: on a synthetic workload with these particular failure modes and a hub-and-spoke execution topology, the cookbook's pipeline behaves as documented below. The structural argument in §9 (document construction is the load-bearing choice) does not depend on the synthetic numbers; the verdicts on H1–H4 do.
+
+## The fixes, mostly, failed
+
+| Experiment | Pre-registered threshold | Actual | Verdict |
+|---|---|---|---|
+| E1 baseline structural recall | ≥ 0.50 on substitution and escalation | 0.222 / 0.252 | MAGNITUDE REFUTED |
+| E2 temporal (H1) | gap ≥ +0.50, improved ≥ 0.70 | gap +0.082 [+0.021, +0.138], improved 0.133 | MAGNITUDE REFUTED; DIRECTION CONFIRMED |
+| E3 omission (H2) | gap > 0, improved ≥ 0.65 | gap −0.004, CI crosses zero | REFUTED |
+| E4 drift (H3) | improved alert ≤ day 52 | alert day 45 (bucket-aligned) | SUPPORTED with caveat |
+| E5 walk vs MFA-5 | walk beats MFA-5 by ≥ 15pp | walk loses by 6.0pp [−0.086, −0.035] | REFUTED, direction reversed |
+
+The verdicts need reading carefully. E2 has a real positive effect (CI excludes zero) in the predicted direction; what failed was the magnitude (+8pp not +50pp). E5 has a real negative effect, the opposite of what the cookbook implies. E3 is a clean null. E4 is the one positive verdict and even that one needs a caveat we explain below. The latency-token fix moved recall on stale pricing from 5.1% to 13.3%, real but well short of the 70% we predicted. The absence-token fix did nothing for the omission class it targeted. The backward suspect walk loses to a heuristic so simple it fits on a Post-it.
+
+The baseline result (E1) deserves its own line. The cookbook's framing implies that structural failures, supplier substitution and escalation loops, are the cases its pipeline handles well, with subtle failures as the open problem. The numbers say the baseline catches the "easy" cases at 22% and 25% recall@cluster. The pipeline is more fragile than the cookbook's worked example suggests, *before* we ever reach the blind spots. The rest of this article is what we learned from looking at why each refutation refuted.
+
+## H2 was inert, and stripping the obvious suspect did not save it
+
+The `MISSING_COMPLIANCE` token does what it was supposed to do at the token level. Across the 247 `compliance_skipped_under_tariff` traces, the token fires with 1.000 precision against the ground-truth label: every trace where compliance was expected and absent gets the token, and only those traces do. The information is in the document.
+
+It just doesn't survive the embedding.
+
+MiniLM tokenizes each document with `case_type` at position 0 (`standard_build`, `supplier_substitution`, and so on). A 384-dimensional sentence embedding pools across positions, but the case-type token shows up first and recurs throughout the structured summary. The cosine-distance geometry it induces is hierarchical: traces sort by case-type macro-cluster first, then by everything else inside. The `MISSING_COMPLIANCE` token is one of ~80 tokens in a document. It can pull a trace a few degrees inside its case-type cluster; it cannot pull it across the chasm to the cluster of `supplier_substitution` traces that are also missing compliance.
+
+Three example traces make this concrete. `t00012` (standard_build, missing compliance) and `t00084` (supplier_substitution, missing compliance) carry identical absence tokens. UMAP places them on opposite sides of the reduced space. They cluster with their case-type siblings, not with each other. `t00321` (regulated_export, missing compliance) goes to a third corner. HDBSCAN finds no density region for "missing compliance" because the absence token never accumulates enough local density to overcome case-type stratification.
+
+A natural follow-up: if case_type dominates the geometry, stripping it should free the absence token. We ran that ablation. Replacing `case_type:X` with a constant placeholder, the CSK recall at the top cluster is 0.170, *below* the 0.190 baseline. Removing case_type does not rescue the absence-token mechanism. The geometry that defeats absence tokens is more distributed than position 0; other tokens (agent names in event sequences, env signals, transitions) carry case-type-correlated structure that continues to shatter CSK traces across clusters even when the explicit case_type token is gone. The honest framing is therefore stronger than the original §5 framing: the absence-token mechanism does not survive any document construction we tried. Either MiniLM's pooling is wrong for this signal, or absence needs to be expressed as something other than a token. Our hypothesis was wrong, not just our implementation.
+
+## The "wins" we did see are mostly one cluster
+
+`escalation_loop` improved by +45pp, the largest single effect in the study. `substitution_reroute` improved by +17pp. `pricing_drift` improved by +2pp (cluster-level; the real drift signal comes from CUSUM, not clustering). All three improvements share a majority cluster: cluster 116 in the improved outputs (`improved/outputs/cluster_x_failure_mode.csv`).
+
+Cluster 116 is a dustbin. It contains 240 traces: 157 `substitution_reroute`, 125 `pricing_drift`, 100 `escalation_loop`, 16 random-noise, and a handful of others. Three "failure classes" co-cluster not because they share a mechanism but because they share a length.
+
+The latency-bucket tokens added one suffix per event (`lat:fast`, `lat:slow`, etc.). Escalation-loop traces average 18 events; everything else averages 10. The baseline already encoded that length differential. EL documents were 902 chars vs 537 for the rest, and the baseline still did not cluster EL traces together. Length is therefore not the mechanism.
+
+We ran the obvious ablation. Replace `lat:<bucket>` with a constant `lat:tick` so every event gets exactly one extra token regardless of latency. Document length is preserved; latency variation is destroyed. The result: `escalation_loop` recall at the top cluster falls from 0.699 to 0.402, which is essentially baseline (0.400). The +45pp gain disappears completely when the latency information is constant, even though document length is unchanged.
+
+The active ingredient is what the bucketed tokens happen to do inside EL loops. 98% of EL latency tokens land in the `lat:fast` bucket because loops, by construction in the simulator, run fast. Each iteration produces a stretch of `recheck_regs lat:fast release_order lat:fast recheck_regs lat:fast...`, a uniform repeating motif. The bucketed version creates that motif. The constant `lat:tick` version does not, because no motif emerges when every token is identical. MiniLM's embedding picks up the repetition and pulls EL traces into one neighborhood. The substitution-reroute and drift co-residents of cluster 116 share the same property at lower intensity: many events, uniform `lat:fast` filler between distinguishable tokens.
+
+The cluster forms on repetitive within-trace structure that the tokenization happens to produce, not on the failure semantics we were targeting. The recall gains attribute to that artifact. H1's stated mechanism, that latency information is lifted into the clustering geometry, is doing no work.
+
+## The backward suspect walk loses to a two-line heuristic
+
+The cookbook's diagnosis component constructs an execution graph, walks backward from a focus event, and scores upstream suspects with a weighted sum `0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role` (claim 8.5.1). The implied claim is that this machinery surfaces the causally responsible agent, not the most visible one.
+
+The two-line baseline, "most frequent agent in the last five events," beats it. Across 549 structural-failure traces with known causal agents:
+
+| Method | Precision@1 (lenient) | 95% CI |
+|---|---:|---|
+| MFA-5 | 0.224 | [0.189, 0.260] |
+| Backward walk | 0.164 | [0.131, 0.195] |
+| **Gap (walk − MFA-5)** | **−0.060** | [−0.086, −0.035] |
+
+The CI on the gap is entirely below zero. The walk is convincingly *worse* than the heuristic, not equivalent.
+
+The mechanism is mundane. The execution graph is hub-and-spoke: the orchestrator touches almost every event, specialists touch their own. Our `graph_connectivity` implementation is `neighbours / 6` (`baseline/README.md` judgment call 3), which is a hub detector by construction. Across the suspect outputs, orchestrator scores 0.45 on proximity, 0.45 on frequency, and 0.83 on graph_connectivity. Supply, the true cause of substitution_reroute, scores roughly 0.20, 0.10, and 0.17 on the same three components. The 0.1-weighted role penalty subtracts 0.05 from the orchestrator's total. It cannot close a gap that wide. Of 406 `substitution_reroute` traces, the walk names `orchestrator` 197 times and `pricing` 85 times. The true cause `supply` is named zero times. Supply is not invisible. Its median position is six events before the focus anchor, well inside `WALK_DEPTH=10`. The walk sees supply and downweights it, because supply appears once in a trace while the orchestrator appears in nearly every event. Frequency dominates.
+
+Two caveats this finding requires. MFA-5 is a deliberately weak baseline: under strict ground truth its precision@1 is 0.004, and the heuristic "wins" here only by being less wrong than the walk. The cookbook's authors can reasonably reply that they were not claiming the walk beats every two-line heuristic, only that it surfaces useful suspects. The refuted claim is the strong one, `walk ≥ MFA-5 + 15pp`, not the weak claim `walk is sometimes useful`. The comparison is also topology-conditional. Our generator hardcodes a hub-and-spoke graph; a heterarchical or chained-specialist execution topology might rank the walk and MFA-5 differently. We did not test this, and the "worse than decorative" verdict applies to hub-and-spoke topologies until someone shows otherwise. For multiple-comparisons honesty: we ran six pre-registered tests without correction. Under Bonferroni at family-wise α = 0.05, the E2 gap CI [+0.021, +0.138] still excludes zero, and the E5 lenient gap CI [−0.086, −0.035] still excludes zero. H1 and H4 survive correction. This is a sensitivity check, not a primary verdict, because we did not pre-register the correction.
+
+The pre-registered verdict was that the walk is "decorative." On the workload we tested, it is worse than that. A team that runs MFA-5 on hub-and-spoke traces will be wrong most of the time; a team that runs the cookbook's walk on the same traces will be wrong slightly more often, with three hundred more lines of code to maintain.
+
+## CUSUM works, but day-of-injection precision is a bucket-alignment artifact
+
+The CUSUM drift detector fires at day 45, the exact day of injection. That looks decisive until you check the parameters.
+
+The detector uses `bucket_days = 5`. Drift was injected at `DRIFT_DAY = 45`. Five divides forty-five. The first post-injection bucket boundary lands precisely on day 45 with no pre-drift contamination. We ran the ablation: change `bucket_days` to 7 and the first cross-cluster alert slips from day 45 to day 56 (an 11-day gap past injection), with one per-case-type alert at day 49. The mechanism still works; the *resolution* is the artifact. The defensible claim is that orthogonal CUSUM on observable price ratios detects a +0.4% drift within one to two buckets of injection, with bucket width as the resolution floor. The +0.4% signal exceeds the bucket-mean noise floor when aggregated to per-case-type strata, and the detector is genuinely orthogonal to the clustering pipeline. "Within one to two buckets" is what to claim; "day of injection" is what to drop.
+
+## What this means for macro evals as a discipline
+
+Population-level analysis of agent traces is the right shape. The machinery underneath is not.
+
+The load-bearing design decision in the cookbook's pipeline is document construction. `doc_structured_summary` is presented as a sensible compression of trace content (claim 5.6.2): scenario, routing, transitions, handoffs, findings, terminal state. It is treated as a mechanical preprocessing step. It is the most consequential design decision in the entire pipeline. It decides what the embedder sees, which decides what the clusterer can find, which decides what the suspect walker can attribute. Our absence-token fix failed because case_type sat at position 0 of the document and dominated geometry. Our latency-token fix appeared to succeed because the bucketed tokens created a uniform repeating motif inside escalation loops, which the embedder picked up as similarity even though no latency information was being used. Our experience here is not a special case; the cookbook picks MiniLM and BERTopic defaults the way we did, never justified and never ablated, and the same blind spots pass downstream into every implementation.
+
+The paper the cookbook did not write is "ablation studies on document construction." What changes if you put `case_type` last? What changes if you tokenize event sequences as n-grams rather than space-joined? What changes under text-embedding-3-small versus MiniLM? What changes if you drop UMAP and cluster the raw embeddings? Each of those is a one-day experiment and none of them appear in the cookbook. Until they do, macro-eval pipelines built on this template are accumulating the same hidden assumptions, and teams will only discover them by running the kind of synthetic-ground-truth audit we ran here.
+
+Two warnings on running such audits. First, a synthetic audit written by the team that owns the pipeline is not an audit; it is a regression test. Treat ground-truth synthetic generation as a separable artifact, version it independently of the pipeline, and require that at least one failure mode in the generator was contributed by someone who has not touched the pipeline code. Second, the comparisons in this article (the walk versus MFA-5, the absence token versus baseline) are conditional on our synthetic workload. A walk variant that beats MFA-5 on our 5,000 traces has not demonstrated anything about workloads where the orchestrator is not the modal agent. Do not generalize verdicts; replicate them.
+
+For a reader who has not read the cookbook: macro evals are population-level analysis of agent traces, contrasted with rubric-against-one-output evals. The pipeline this article audits is one specific way to do macro evals: embed each trace as a text document, reduce with UMAP, cluster with HDBSCAN, label clusters, rank them by impact-times-lift, walk backward through suspect events to attribute cause. The frame holds. The specific way is fragile in ways that are not visible from the inside without ground-truth labels. The first thing to do is take the cookbook's pipeline, generate a few thousand synthetic traces with the failures you care about, and measure recall against ground truth before trusting any clusters you discover in production. If you cannot generate ground-truth synthetic traces in your domain, you cannot audit the pipeline. That is a constraint on the methodology that the cookbook does not name.
+
+## Five dated falsifiers
+
+This article makes claims that should be wrong, if they are wrong. Each falsifier below refutes the *single claim* it names, not the article as a whole; the document-construction argument in §9 stands or falls on its own evidence.
+
+1. **By 2026-08-23**, if anyone runs the constant `lat:tick` ablation and the +45pp `escalation_loop` gain survives, our uniform-motif claim is refuted. (We ran it; result is 0.402 vs 0.400 baseline. The claim survives by the smallest possible margin, and we invite an independent replication.)
+2. **By 2026-09-30**, if anyone publishes a backward suspect walk variant that beats MFA-5 by ≥ 15pp with non-overlapping CIs on a comparable synthetic workload (5,000 traces, ground-truth causal agents, hub-and-spoke topology), our "worse than decorative" framing is refuted *for that topology*.
+3. **By 2026-11-15**, if anyone reproduces our pipeline with `case_type` stripped from the document and demonstrates ≥ 50% recall@cluster for `compliance_skipped_under_tariff` using absence tokens, our "absence mechanism does not survive any document construction we tried" claim is refuted. (We ran one variant; recall fell to 0.170. A different stripping strategy may produce different numbers.)
+4. **By 2027-01-31**, if anyone runs CUSUM with `bucket_days = 7` against a `DRIFT_DAY = 45` injection and detects within one day of injection, our bucket-alignment caveat is wrong. (We ran it; detection slipped to day 49/56. The caveat survives.)
+5. **By 2027-03-31**, if anyone shows that text-embedding-3-small (or any other embedder) makes our H2 fix work without changing the document structure, our claim that document construction is the load-bearing choice weakens substantially.
+
+## Limitations
+
+The seed and curated-workload caveats are stated up front and remain the largest limitations; we will not restate them. Beyond those: single domain (synthetic EV order workflow); the document-geometry argument should generalize but we have not tested it elsewhere. MiniLM + BERTopic defaults; other embedders may distribute information across positions differently. The synthetic data is clean compared to production traces; real-world noise may either help (by breaking the case-type hierarchy) or hurt (by lowering all recall numbers further). The MFA-5 baseline we used to beat the walk is itself terrible at strict ground truth (precision@1 = 0.004); "MFA-5 wins" is the headline only because the walk is worse, not because MFA-5 is good.
+
+## Reproduce
+
+```bash
+cd /Users/john/macro-evals-response
+python3 baseline/pipeline.py
+python3 improved/pipeline.py
+python3 eval/metrics.py
+```
+
+Runtime: ~90 seconds end-to-end on a CPU-only laptop. Every number in this article traces to `eval/raw_numbers.json` or to the `cluster_x_failure_mode.csv` files in `baseline/outputs/` and `improved/outputs/`. The pre-registration is at `eval/preregistration.md`; the verdicts at `eval/results.md`. If you find a number in this article that does not match the artifacts, the artifacts are right and this article is wrong.

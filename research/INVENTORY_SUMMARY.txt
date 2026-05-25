@@ -1,0 +1,172 @@
+MACRO EVALS RESEARCH: SOURCE CLAIMS INVENTORY
+==============================================
+
+Location: /Users/john/macro-evals-response/research/source-claims.md
+Compiled: 2026-05-25
+Source URL: https://developers.openai.com/cookbook/examples/partners/macro_evals_for_agentic_systems/macro_evals_for_agentic_systems
+
+STRUCTURE
+=========
+
+The inventory is organized into 14 major sections:
+
+1. PROBLEM FRAMING (4 subsections, ~8 claims)
+   - Why macro evals needed
+   - Scope beyond model grading
+   - Two-layer architecture
+   - Conceptual mental model
+
+2. SIMULATION DOMAIN & ARCHITECTURE (3 subsections, ~9 claims)
+   - EV order workflow
+   - Specialist agents (10+)
+   - SDK architecture features
+
+3. DATASET CHARACTERISTICS (5 subsections, ~17 claims)
+   - Scale: 992 traces from 1,000 requested
+   - Bundle anatomy (5 components)
+   - Scenario diversity (14 case types)
+   - Median structure (30 events, 8 spans, 2 handoffs, 4 tools)
+
+4. LOWER-LEVEL EVALS: PROMPTFOO LAYER (4 subsections, ~9 claims)
+   - Promptfoo role & representation
+   - Five rubrics specified (final_decision_quality, policy_compliance_correctness, 
+     routing_specialist_activation, market_drift_awareness, review_appropriateness)
+   - Eval signal model
+   - Production implementation flexibility
+
+5. DATASET CONSTRUCTION & NORMALIZATION (7 subsections, ~17 claims)
+   - Two-table schema (traces_df, events_df)
+   - Label pipeline (case_type → run_outcome → eval_finding → behavior_pattern)
+   - Outcome grouping & severity weighting
+   - Impact score formula with multipliers
+   - Trace document construction
+   - Focus-event signals
+
+6. BERTOPIC-STYLE DISCOVERY (9 subsections, ~30 claims)
+   - Four-stage pipeline (embed → reduce → cluster → label)
+   - Embedding stage (function f unspecified)
+   - UMAP reduction
+   - HDBSCAN clustering
+   - Term-scoring formula: score(t,k) = tf(t,k) × log((1+N)/(1+df(t)))
+   - Discovery input filtering
+   - Hyperparameters: min_cluster_size=24, n_neighbors=30, top_n_terms=8, random_state=42
+   - Impact scoring: impact_score(k) = prevalence_share(k) × severity_weighted_prevalence(k)
+   - Output interpretation
+
+7. LIFT & CASE-TYPE HEATMAP (3 subsections, ~9 claims)
+   - Heatmap purpose (case_type × behavior_pattern cross-tabulation)
+   - Lift computation: slice_pattern_share / overall_pattern_share
+   - Actionability through metadata slicing
+
+8. AGENTRACE-STYLE DIAGNOSIS (6 subsections, ~13 claims)
+   - Two-pass structure (discovery then diagnosis)
+   - Execution graph construction (nodes=events, edges=temporal/structural links)
+   - Focus event anchor selection
+   - Backward walk algorithm
+   - Suspect scoring: suspect_score = 0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role
+   - Causal inference caveat
+
+9. OUTPUTS, VISUALIZATIONS, INTERPRETABILITY (1 subsection, ~1 claim)
+   - Review finding signal interpretation
+
+10. UNDECLARED ASSUMPTIONS & IMPLICIT COMMITMENTS (5 subsections, ~9 claims)
+    - Trace document quality critical
+    - Embedding model unspecified assumptions
+    - Clustering appropriateness
+    - Backward walk temporal causality
+    - Feature importance weight justifications
+
+11. UNDEFENDED ASSERTIONS & IMPLICIT COMMITMENTS (3 subsections, ~5 claims)
+    - Actionability
+    - Simulation realism
+    - Two-level hierarchy necessity
+
+12. CRITICAL GAPS: UNSPECIFIED PARAMETERS (6 subsections, 15 items)
+    - Embedding: model, version, dimensionality, tokenization rules
+    - Clustering: UMAP metric/parameters, HDBSCAN linkage
+    - Scoring: metric definitions, aggregation methods
+    - Sampling: trace count, search depth
+    - Promptfoo: LLM config, inter-rater agreement
+    - Data: event normalization, case-type generator, bundle construction
+
+13. CRITICAL ABLATIONS NOT RUN (6 sections, 23 items)
+    - Discovery component ablations (5 items)
+    - Impact scoring ablations (4 items)
+    - Diagnosis ablations (5 items)
+    - Document/signal ablations (4 items)
+    - Hierarchy ablations (3 items)
+    - Dataset ablations (2 items)
+
+14. FAILURE MODES & EDGE CASES NOT TESTED (6 sections, 27 items)
+    - Clustering failures (5 items)
+    - Diagnosis failures (5 items)
+    - Label/interpretation failures (4 items)
+    - Dataset/scope failures (5 items)
+    - Performance/scalability failures (4 items)
+    - Assumption violation failures (4 items)
+
+QUICK STATS
+===========
+
+Primary Claims:        83 (across 9 major categories)
+Formulas Named:        9 (impact_score, suspect_score, score(t,k), lift, etc.)
+Hyperparameters:       7 (min_cluster_size, top_n_terms, random_state, etc.)
+Rubrics:               5 (final_decision_quality, policy_compliance, routing, market_drift, review)
+Severity Levels:       3 (low/1.0, medium/2.0, high/2.5-3.0)
+Label Categories:      4 (case_type, run_outcome, eval_finding, behavior_pattern)
+Specialist Roles:      10+ (validation, supply risk, procurement, capacity, routing, etc.)
+Signal Types:          5 (review finding, review required, failed/blocked, triage route, tool warning)
+Discovery Phases:      4 (embed, reduce, cluster, label)
+
+Unspecified Parameters: 15 items
+Unrun Ablations:        23 items
+Untested Failures:      27 items
+
+Total Gaps/Vulnerabilities: 65 items
+
+KEY VULNERABILITIES FOR CRITIC
+===============================
+
+HIGH PRIORITY:
+- Embedding model not specified (affects everything downstream)
+- UMAP/HDBSCAN hyperparameters left to implementation defaults (reproducibility risk)
+- Severity weights (1.0, 2.0, 2.5, 3.0) unjustified
+- Suspect score weights (0.4, 0.3, 0.2, 0.1) unjustified; no sensitivity analysis
+- No ablation studies comparing design choices (single-path methodology)
+- No domain transfer validation (claims domain-agnostic but only tests EV)
+- No failure mode testing (clustering all-in-one cluster? diagnosis dead-ends?)
+
+MEDIUM PRIORITY:
+- Lower-level eval inter-rater agreement not discussed
+- Document construction quality asserted but not validated
+- Backward walk max_depth=5 appears arbitrary
+- Term-frequency calculation method (n-grams? stems?) not specified
+- Role heuristic rules not detailed
+- Discovery input filter fallback behavior (all traces if <8 failures) not tested
+
+LOW PRIORITY (but still notable):
+- Promptfoo grading config (LLM version, temperature) not named
+- Event normalization rules not shown inline
+- Case-type generator algorithm not described
+- top_n_traces=12 for backward walk not justified
+
+USAGE NOTES
+===========
+
+1. Use sections 1-11 to quote original claims and identify implicit commitments.
+
+2. Use section 12 to point out reproducibility gaps (can't reimplement without these details).
+
+3. Use section 13 to suggest design alternatives, sensitivity analyses, and comparison experiments.
+
+4. Use section 14 to discuss robustness and failure handling.
+
+5. Sections 10-11 highlight assumptions the article doesn't validate. These are especially useful
+   for "what if this assumption is wrong?" thought experiments.
+
+6. The "Summary Table" in section provides quick reference for claim counts by category.
+
+7. The article is well-written and methodologically sound. The gaps identified here are
+   *normal* for a cookbook article—but the response piece should highlight them as areas
+   where production deployments would need additional validation.
+
