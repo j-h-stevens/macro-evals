@@ -24,13 +24,13 @@ One publishing-norms note. We chose to publish before the seed sweep completes. 
 
 ## The fixes, mostly, failed
 
-| Experiment | Pre-registered threshold | Actual (in-sample) | In-sample verdict | Held-out recall (20%) |
-|---|---|---|---|---|
-| E1 baseline structural recall | ≥ 0.50 on substitution and escalation | 0.222 / 0.252 | MAGNITUDE REFUTED | substitution 0.253, escalation 0.370 (baseline, n=75/27) |
-| E2 temporal (H1) | gap ≥ +0.50, improved ≥ 0.70 | gap +0.082 [+0.021, +0.138], improved 0.133 | MAGNITUDE REFUTED; DIRECTION CONFIRMED | gap **−0.111** [−0.244, +0.000]; **direction reverses** |
-| E3 omission (H2) | gap > 0, improved ≥ 0.65 | gap −0.004, CI crosses zero | REFUTED | baseline 0.104, improved 0.104 (n=48); still REFUTED |
-| E4 drift (H3) | improved alert ≤ day 52 | alert day 45 (bucket-aligned) | SUPPORTED with caveat | (CUSUM is cluster-independent; no held-out re-run) |
-| E5 walk vs MFA-5 | walk beats MFA-5 by ≥ 15pp | walk loses by 6.0pp lenient [−0.086, −0.035] | REFUTED, direction reversed | lenient gap **−0.101** [−0.182, −0.030]; **walk still loses, by more** |
+| Experiment | Pre-registered threshold | Actual (in-sample) | In-sample verdict | Held-out recall (20%) | Seed range (5 seeds) |
+|---|---|---|---|---|---|
+| E1 baseline structural recall | ≥ 0.50 on substitution and escalation | 0.222 / 0.252 | MAGNITUDE REFUTED | substitution 0.253, escalation 0.370 (baseline, n=75/27) | sub [0.116, 0.222]; esc [0.217, 0.699]; verdict REFUTES in all 5 |
+| E2 temporal (H1) | gap ≥ +0.50, improved ≥ 0.70 | gap +0.082 [+0.021, +0.138], improved 0.133 | MAGNITUDE REFUTED; DIRECTION CONFIRMED | gap **−0.111** [−0.244, +0.000]; **direction reverses** | in-sample gap [+0.010, +0.082]; verdict REVERSED across seeds (2/5 confirm direction, 3/5 refute) |
+| E3 omission (H2) | gap > 0, improved ≥ 0.65 | gap −0.004, CI crosses zero | REFUTED | baseline 0.104, improved 0.104 (n=48); still REFUTED | in-sample gap [−0.077, +0.036]; verdict REFUTED in all 5 |
+| E4 drift (H3) | improved alert ≤ day 52 | alert day 45 (bucket-aligned) | SUPPORTED with caveat | (CUSUM is cluster-independent; no held-out re-run) | not swept (CUSUM is deterministic and cluster-independent) |
+| E5 walk vs MFA-5 | walk beats MFA-5 by ≥ 15pp | walk loses by 6.0pp lenient [−0.086, −0.035] | REFUTED, direction reversed | lenient gap **−0.101** [−0.182, −0.030]; **walk still loses, by more** | in-sample lenient gap [−0.069, +0.000]; 4/5 seeds MFA-5 BEATS WALK, 1/5 NULL, 0/5 reversed |
 
 Held-out columns come from `eval/held_out.py`: train on 80% (n=3982) by `hash(trace_id) % 5 ≠ 0`, fit baseline and improved pipelines, then assign held-out 20% (n=1018) via `UMAP.transform` + `hdbscan.approximate_predict`. Majority cluster per mode is fit on the train partition and applied unchanged to held-out.
 
@@ -52,6 +52,22 @@ The verdicts above are conditional on one hyperparameter setting (`min_cluster_s
 ### Mechanism attribution: 2×2×2 factorial on {latency, absence, CUSUM}
 
 The "improved" pipeline ships three mechanisms at once. To isolate which one does the work, we ran four pipeline variants (000 = baseline, 100 = latency only, 010 = absence only, 110 = both; CUSUM is orthogonal to clustering so the +1 axis collapses) and recomputed recall@cluster per mode (`eval/factorial.md`). Three findings: (1) On escalation_loop, latency alone contributes +17pp, absence alone contributes +9pp, and the interaction contributes +19pp on top — most of the +45pp headline gain is *interaction*, not either mechanism in isolation. (2) On substitution_reroute, each mechanism *hurts* in isolation (−0.013 and −0.079) but their combination yields +16.5pp; pure interaction. (3) On CSK the recall sits at 0.19 in every cell — neither absence tokens nor latency tokens nor their combination produce any lift on the omission class. Kernighan's panel critique that "three mechanisms shipped together prevents attribution" is partly answered: latency and absence together produce most of the cluster-116 dustbin effect; neither alone does.
+
+### Seed sweep results
+
+The caveat in §"Caveats" promised E2 and E5 across seeds {7, 42, 137, 2024, 31337} by 2026-07-01. We ran the sweep five weeks early (raw rows in `eval/seed_sweep_raw.jsonl`, per-seed artifacts in `eval/seed_sweep_outputs/seed_<S>/`, summary in `eval/seed_sweep.md`). The seed propagates everywhere: `random.seed`, `numpy.random.seed`, PyTorch manual seed, UMAP `random_state`, all bootstrap RNGs, and the train/test partition itself (salted to `hash((trace_id, seed)) % 5 == 0` so the held-out *set* moves between seeds, not only the cluster fit). E4 is omitted: the CUSUM drift detector is deterministic and cluster-independent.
+
+**E5 lenient (the headline finding):** per-seed gap (walk − MFA-5) is −0.060 (seed 42), 0.000 (seed 7), −0.038 (seed 137), −0.060 (seed 2024), −0.069 (seed 31337). Range [−0.069, +0.000]. Four of five seeds give MFA-5 BEATS WALK; the fifth (seed 7) collapses to NULL with point gap exactly 0.000. **No seed reverses the sign in favor of the walk.** The qualitative headline, "the backward suspect walk does not beat MFA-5 on this workload," survives in all five seeds; the stronger "the walk *loses*" survives in four. We tag this as **robust in direction, mixed in significance** rather than ROBUST or REVERSED — the verdict-stability table in `eval/seed_sweep.md` labels it MIXED on the strict criterion (one dissenting verdict), but the dissent is toward null, not toward the cookbook's claim. The §"backward suspect walk loses to a two-line heuristic" framing is the one to keep.
+
+**E5 strict** is ROBUST across all five seeds (all NULL): both methods bottom out at precision@1 ≈ 0.0–0.004. This is the floor effect already discussed; it replicates everywhere.
+
+**E2 in-sample gap (improved − baseline on stale_quote_slow_pricing):** +0.082, +0.056, +0.056, +0.041, +0.010 across seeds 42, 7, 137, 2024, 31337 respectively. Range [+0.010, +0.082]. The point gap stays positive in every seed but shrinks substantially — by a factor of eight between the largest and smallest seed. The verdict is REVERSED across the panel: seeds 7 and 42 give DIRECTION CONFIRMED; seeds 137, 2024, 31337 give REFUTED because the gap CI lower bound drops to ≤0. The seed-42 "direction confirmed" verdict we kept in the original article body is a minority report among the five seeds. Combined with the held-out reversal already documented, the honest reading of E2 is: the latency-token mechanism produces a small positive effect on most seeds, but the gap is small enough that bootstrap CIs straddle zero on three of five seeds, and the effect does not survive an 80/20 cluster-refit on any seed.
+
+**E2 held-out gap:** ROBUST across seeds — every seed refutes E2 on held-out. Four of five seeds give gap=0.000 because the train-fit baseline and improved pipelines collapse onto the same majority cluster for `stale_quote_slow_pricing` (the dustbin pattern from §"The 'wins' we did see are mostly one cluster" reasserting itself when the dataset shrinks to 80%); seed 42 here gives gap=+0.059 with the salted partition, which is *different from* the −0.111 gap reported in §"Held-out validation" above, because that earlier number came from the unsalted `eval/held_out.py` partition. Both refute E2; they refute it by different mechanisms. The seed-42 held-out reversal is therefore not a single-seed artifact in *direction*, but the specific magnitude (−0.111) is partition-dependent. The article keeps both numbers honestly: the unsalted seed-42 held-out gap is −0.111 (the original); the salted seed sweep across all five seeds confirms that no seed lets the improved pipeline clear the magnitude thresholds.
+
+**E1 and E3 are ROBUST.** E1 REFUTES in every seed (range substitution [0.116, 0.222], escalation [0.217, 0.699]). E3 REFUTES in every seed (gap range [−0.077, +0.036]). The widest E1 swing — escalation recall from 0.217 to 0.699 across seeds — is itself worth flagging: the baseline pipeline's recall on escalation_loop is unstable enough that any single-seed number for it should be read as an order-of-magnitude estimate, not a point.
+
+The structural argument in §"What this means for the cookbook's pipeline template" does not depend on which side of these CIs the point estimates fall on; the seed sweep mostly tightens or qualifies the empirical paragraphs above it. The one finding the article rests on — the backward suspect walk does not earn its complexity against MFA-5 — survives all five seeds in direction, with the dissenting seed pointing to NULL, not to a reversal in favor of the walk.
 
 ### Hand-feature baseline (Carmack panel critique C5)
 
