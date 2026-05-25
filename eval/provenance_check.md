@@ -70,6 +70,20 @@ Article previously said "141-line diff"; corrected to "139-line diff" (line 13).
 4. Suspect-score components corrected: orchestrator 0.44/0.44/0.78 (was 0.45/0.45/0.83); supply 0.22/0.11/0.17 (was 0.20/0.10/0.17) (line 81)
 5. "98% of EL latency tokens" → "94%" (line 61); actual 2444/2595 = 0.942
 
+## Phase 6 re-check (post-Phase-3/4/5 numbers)
+
+Verified all numbers added in Phases 3 (hand-feature, held-out), 4 (cookbook reply, M1 structural), and 5 (seed sweep). Two additional bugs caught:
+
+6. §"Held-out validation" said the train-fit improved pipeline places "0.047" of stale_quote traces in its best cluster. Actual value from `held_out_raw.json` is `held_out_improved=0.044` (the 0.047 was the in-sample improved recall, conflated). Corrected to 0.044.
+7. §"Mechanism attribution" said CSK recall "sits at 0.19 in every cell" of the factorial. Actual values from `factorial/factorial_recalls.json`: 000=0.194, 100=0.174, 010=0.194, 110=0.190. Corrected to "sits between 0.17 and 0.19 in every cell."
+
+All other Phase 3/4/5 numbers verified against source:
+- Held-out gaps (E2 −0.111 [−0.244, +0.000]; E5 lenient −0.101 [−0.182, −0.030]) match `held_out_raw.json`.
+- Hand-feature recalls (sub 0.281, CSK 0.194, stale 0.087, pricing 0.087, EL 0.168, noise 0.100) match the top-cluster counts in `baseline_handfeature/outputs/cluster_x_failure_mode.csv` divided by mode_counts.
+- Factorial deltas (EL +17 / +9 / +19pp; sub_reroute −0.013, −0.079, +16.5pp) match `factorial_recalls.json`.
+- Seed-sweep ranges (E1 sub [0.116, 0.222]; E1 esc [0.217, 0.699]; E2 in-sample [+0.010, +0.082]; E3 [−0.077, +0.036]; E5 lenient [−0.069, +0.000]) match `seed_sweep.md`.
+- Cluster-stability swings (EL 0.21–0.70; sub 0.08–0.39; CSK 0.12–0.39) match `cluster_stability.md`.
+
 ## Verdict
 
 PASS
