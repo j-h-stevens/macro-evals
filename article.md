@@ -67,6 +67,9 @@ A natural follow-up: if case_type dominates the geometry, stripping it should fr
 
 Cluster 116 is a dustbin. It contains 240 traces: 157 `substitution_reroute`, 125 `pricing_drift`, 100 `escalation_loop`, 16 random-noise, and a handful of others. Three "failure classes" co-cluster not because they share a mechanism but because they share a length.
 
+![Cluster 116 composition: 157 sub_reroute, 125 pricing_drift, 100 escalation_loop, 16 random_noise, 9 stale_quote, 5 CSK](figures/cluster_116_composition.png)
+*A single bar showing what is actually in cluster 116. The three "wins" attributed to the improved pipeline share this cluster; the cluster contains no shared failure mechanism, only a shared trace length.*
+
 The latency-bucket tokens added one suffix per event (`lat:fast`, `lat:slow`, etc.). Escalation-loop traces average 18 events; everything else averages 10. The baseline already encoded that length differential. EL documents were 902 chars vs 537 for the rest, and the baseline still did not cluster EL traces together. Length is therefore not the mechanism.
 
 We ran the obvious ablation. Replace `lat:<bucket>` with a constant `lat:tick` so every event gets exactly one extra token regardless of latency. Document length is preserved; latency variation is destroyed. The result: `escalation_loop` recall at the top cluster falls from 0.699 to 0.402, which is essentially baseline (0.400). The +45pp gain disappears completely when the latency information is constant, even though document length is unchanged.
